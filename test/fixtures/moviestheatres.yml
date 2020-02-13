@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie: one
+  theatre: one
+  morning_show_count: 1
+  evening_show_count: 1
+  matinee_show_count: 1
+  night_show_count: 1
+
+two:
+  movie: two
+  theatre: two
+  morning_show_count: 1
+  evening_show_count: 1
+  matinee_show_count: 1
+  night_show_count: 1

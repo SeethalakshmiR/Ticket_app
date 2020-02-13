@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+<h1> Details </h1>
+<%= form_with(model: @detail, local: true) do |d| %>
+  <% if @detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detail.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+        <% @detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="field">
+   <br>Date: <%= d.label :desired_attribute,  Date.today %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :show_time %>
+    <%= d.select :show_time, options_for_select(@option) %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :name %>
+    <%= d.text_field :name %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :email %>
+    <%= d.email_field :email %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :phone %>
+    <%= d.telephone_field :phone, placeholder: 'xxx-xxx-xxxx' %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :no_of_seats %>
+    <%= d.number_field :no_of_seats, max: 10 %>
+  </div>
+
+  <div class="field">
+    <br><%= d.label :theatre_name %>
+    <%= d.text_field :confirm_theatre_name, readonly:true %>
+  </div>
+
+  <div class="field">
+     <br> <%= d.label :movie_name %>
+    <%= d.text_field :confirm_movie_name, readonly: true %>
+  </div>
+
+  <div class="field">
+    <br><%= d.hidden_field :moviestheatre_id, readonly: true %>
+  </div>
+
+  <div class="actions">
+    <br><%= d.submit %>
+  </div>
+
+  <div class="actions">
+    <br><%= link_to "Back", theatres_index_path(id: @moviename.id) %>
+  </div>
+
+
+
+<% end %>
+
+
+

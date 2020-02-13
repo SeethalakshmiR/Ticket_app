@@ -1,0 +1,4 @@
+<h1>welcome</h1>
+ <% Movie.all.each do |movie| %>
+<%= link_to movie.name, theatres_index_path(id: movie.id) %><br/>
+<% end %>
