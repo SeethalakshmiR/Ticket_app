@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'confirmations/index'
   get 'movies/index'
   get 'theatres/index'
+  get 'theatreshows/index'
   resources :moviestheatres
   resources :details
   root 'movies#index'

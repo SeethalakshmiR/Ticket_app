@@ -1,4 +1,4 @@
 <h2> welcome to the theatre </h2>
  <% @theatre.all.each do |theatre| %>
-   <%= link_to theatre.name, moviestheatres_path(theatre_id: theatre.id, movie_id: @mov.id) %><br/>
+   <%= link_to theatre.name, theatreshows_index_path(theatre_id: theatre.id, movie_id: @mov.id) %><br/>
  <% end %>

@@ -1,0 +1,4 @@
+<h2> welcome to the shows </h2>
+ <% @theatreshow.each do |show| %>
+   <%= link_to show.name, moviestheatres_path(theatre_id:  @theatreshow, movie_id: @movies) %><br/>
+ <% end %>

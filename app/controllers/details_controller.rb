@@ -29,6 +29,7 @@ class DetailsController < ApplicationController
     elsif time > ' 15 : 00 ' && time < ' 19 : 00 '
       @option = [['select', ''], 'Night show(starting time 8.00 pm)']
     end
+    binding.pry
     @det = Moviestheatre.find_by(id: params[:id])
     @moviename = Movie.find_by(id: @det.movie_id)
     @theatrename = Theatre.find_by(id: @det.theatre_id)
