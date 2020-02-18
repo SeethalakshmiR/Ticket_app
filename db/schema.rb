@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_094112) do
+ActiveRecord::Schema.define(version: 2020_02_17_103144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(version: 2020_02_14_094112) do
     t.bigint "theatre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "morning_show_count"
-    t.integer "matinee_show_count"
-    t.integer "evening_show_count"
-    t.integer "night_show_count"
+    t.integer "Morning_show"
+    t.integer "Matinee_show"
+    t.integer "Evening_show"
+    t.integer "Night_show"
     t.index ["movie_id"], name: "index_moviestheatres_on_movie_id"
     t.index ["theatre_id"], name: "index_moviestheatres_on_theatre_id"
   end
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_094112) do
     t.bigint "theatre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "seat_count"
     t.index ["theatre_id"], name: "index_theatreshows_on_theatre_id"
   end
 

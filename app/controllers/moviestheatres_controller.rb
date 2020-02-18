@@ -5,5 +5,6 @@ class MoviestheatresController < ApplicationController
   def index
     @mov1 = Moviestheatre.find_by(theatre_id: params[:theatre_id],
                                   movie_id: params[:movie_id])
+     @show = Theatreshow.find_by(id: params[:id])
   end
 end
