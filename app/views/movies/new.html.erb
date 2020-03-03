@@ -1,0 +1,9 @@
+<%= form_for(@movie) do |movie| %>
+<div class="field">
+    <br><%= movie.label :name %>
+    <%= movie.text_field :name %>
+  </div>
+  <div class="actions">
+    <br><%= movie.submit "Submit" %>
+ </div>
+<% end %>

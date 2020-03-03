@@ -13,7 +13,7 @@ module App
     # config.time_zone = 'Eastern Time (US & Canada)'
     # config.active_record.default_timezone = :local
     # config.time_zone = 'Kolkata'
-    config.time_zone = "UTC"
+    config.time_zone = 'UTC'
     config.active_record.default_timezone = :utc
 
     config.time_zone = 'Eastern Time (US & Canada)'
@@ -22,7 +22,6 @@ module App
 
     # Initialize configuration defaults for originally generated Rails version.
     # config.load_defaults 6.0
-
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
