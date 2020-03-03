@@ -24,15 +24,15 @@ class MoviesController < ApplicationController
   end
 
   def search
-    if params[:search]
+    if params[:search].empty?
+      @movie = []
+    else
       @movie = Movie.where('name ilike ? or actor ilike ?',
                            "%#{params[:search]}%", "%#{params[:search]}%")
-    else
-      @movie = Movie.all
-    end
-    movie = @movie
-    render json: movie
- end
+     end
+       movie = @movie
+       render json: movie
+  end
 
   private
 

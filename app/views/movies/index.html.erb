@@ -26,7 +26,7 @@
         data: { search: text },
         success: function(movie) {
           if (!$.trim(movie)){
-            alert("Search not found", + movie);
+          $('#search-results').append("Search not found");
           }
           else{
             var output="<ul>";
