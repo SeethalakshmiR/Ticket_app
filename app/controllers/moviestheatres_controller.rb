@@ -8,6 +8,10 @@ class MoviestheatresController < ApplicationController
     @show = Theatreshow.find_by(id: params[:id])
   end
 
+  def show
+    @movietheatre = Moviestheatre.find(params[:id])
+  end
+
   def new
     @movie = Movie.all
     @theatre = Theatre.all
@@ -35,6 +39,6 @@ class MoviestheatresController < ApplicationController
   private
 
   def theatre_params
-    params.require(:moviestheatre).permit(:movie_id, :theatre_id)
+    params.require(:moviestheatre).permit(:movie_id, :theatre_id )
    end
 end

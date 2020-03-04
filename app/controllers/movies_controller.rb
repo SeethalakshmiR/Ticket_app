@@ -29,9 +29,21 @@ class MoviesController < ApplicationController
     else
       @movie = Movie.where('name ilike ? or actor ilike ?',
                            "%#{params[:search]}%", "%#{params[:search]}%")
-     end
-       movie = @movie
-       render json: movie
+
+
+      @details = []
+      @movie.each do |movie|
+        @movietheatre = Moviestheatre.where(movie_id: movie.id)
+        @theatre = []
+        @movietheatre.each do |movietheatre|
+          @theatre << Theatre.find_by(id: movietheatre.theatre_id)
+        end
+          @theatre.each do |theatre|
+            @details << {theatrename: theatre.name, name: movie.name, actor: movie.actor}
+          end
+      end
+    end
+      render :search
   end
 
   private

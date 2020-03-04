@@ -10,10 +10,13 @@
     <br><%= text_field_tag :search, params[:search], id: 'name' %>
     <%= button_tag "search", id: "search_movie" %>
   <% end %>
+    <div id = "name">
+    <% @movie.all.each do |movie| %>
+    <br><%= link_to movie.name, theatre_path(id: movie.id) %><br/>
+    <% end %>
+  </div>
 <% end %>
 
-<div id="search-results">
-</div>
 
 <script type= "text/javascript">
   $(document).ready(function() {
@@ -32,7 +35,7 @@
             var output="<ul>";
             for (var i in movie)
             {
-              output+="<li>" + movie[i].name + "</li>";
+              output+="<li>" + movie[i].name + ',' + movie[i].theatrename + "</li>";
             }
             output+="</ul>";
             $('#search-results').append(output);
@@ -43,8 +46,6 @@
 });
 </script>
 
- <div id = "name">
-    <% @movie.all.each do |movie| %>
-    <br><%= link_to movie.name, theatre_path(id: movie.id) %><br/>
-    <% end %>
-  </div>
+<div id="search-results">
+</div>
+

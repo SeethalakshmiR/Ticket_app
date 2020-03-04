@@ -6,8 +6,6 @@ class Moviestheatre < ApplicationRecord
   belongs_to :theatre
   has_many :details
 
-  validates :movie_id, :theatre_id, :morning_show_count, presence: true
-  validates :matinee_show_count,
-            :evening_show_count,
-            :night_show_count, presence: true
+  validates :movie_id, :theatre_id, presence: true
+
 end
