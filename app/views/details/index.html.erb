@@ -1,0 +1,20 @@
+<table>
+  <tbody>
+    <% @details.each do |detail| %>
+<tr>
+  <td><%= detail.name %></td>
+  <td><%= detail.email %></td>
+  <td><%= detail.phone %></td>
+  <td><%= detail.no_of_seats %></td>
+  <td><%= detail.show_time %></td>
+  <td><%= detail.confirm_theatre_name %></td>
+  <td><%= detail.confirm_movie_name %></td>
+  <td><%= detail.price %></td>
+</tr>
+  <% @total += detail.price %>
+    <% end %>
+    <% @total %>
+  </tbody>
+</table>
+  <strong>Total:</strong>
+  <%= @total %>

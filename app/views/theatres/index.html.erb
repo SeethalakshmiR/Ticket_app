@@ -1,0 +1,4 @@
+<% @theatre.all.each do |theatre| %>
+    <br><%= theatre.name %><br/>
+  <% end %>
+  <br><%= link_to "Add theatre", new_theatre_path %>

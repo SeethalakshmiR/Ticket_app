@@ -1,0 +1,53 @@
+<% if current_user.role == 'Admin' %>
+  <% @movie.all.each do |movie| %>
+    <br><%= movie.name %><br/>
+  <% end %>
+  <br><%= link_to "Add movie", new_movie_path %>
+<% else %>
+  <h1>welcome</h1>
+  <%= form_tag(search_path, remote: true, :method => "get") do  %>
+    <%= label_tag("Search: ") %>
+    <br><%= text_field_tag :search, params[:search], id: 'name' %>
+    <%= button_tag "search", id: "search_movie" %>
+  <% end %>
+    <div id = "movies">
+    <% @movie.all.each do |movie| %>
+    <br><%= link_to movie.name, theatre_path(id: movie.id) %><br/>
+    <% end %>
+  </div>
+<% end %>
+
+
+<script type= "text/javascript">
+  $(document).ready(function() {
+    $('#search_movie').click(function(event) {
+      event.preventDefault();
+      var text = $('#name').val();
+      $.ajax({
+        type: "GET",
+        url: '/search',
+        data: { search: text },
+        success: function(movie) {
+          if (!$.trim(movie)){
+          $('#search-results').append("Search not found");
+          $('#movies').hide();
+          }
+          else{
+            var output="<ul>";
+            for (var i in movie)
+            {
+              $('#movies').hide();
+              output+="<li>" + movie[i].name + ',' + movie[i].theatrename + "</li>";
+            }
+            output+="</ul>";
+            $('#search-results').append(output);
+          }
+        },
+    });
+   });
+});
+</script>
+
+<div id="search-results">
+</div>
+

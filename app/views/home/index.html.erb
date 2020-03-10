@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <% if current_user.role == "Admin" %>
+    <br><%= link_to "Movies", movies_path %>
+    <br><%= link_to "Theatres", theatres_path %>
+    <br><%= link_to "Add movies to theatres", new_moviestheatre_path %>
+    <br><%= link_to "Add shows", theatreshows_path %>
+    <br><%= link_to "View details", details_path %>
+    <br><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+      <br><%= link_to "Movies", movies_path %>
+      <br><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% end %>
+<% else %>
+  <%= button_to 'Signup', new_user_registration_path, method: :get %><br>
+  <%= button_to 'Login', new_user_session_path, method: :get %><br>
+  <%= button_to 'Sign in with google',  user_google_oauth2_omniauth_authorize_path %>
+<% end %>
+

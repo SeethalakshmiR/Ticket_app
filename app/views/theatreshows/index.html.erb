@@ -1,0 +1,13 @@
+<% @show.each do |show| %>
+  <% @tname = Theatre.find_by(id: show) %>
+  <strong><%= @tname.name %>
+  <%= show %></strong>
+  <br><% @name = Theatreshow.where(theatre_id: show) %>
+  <br><% @name.all.each do|s| %>
+  <%= s.name %><br>
+  <% end %>
+  <br>
+<% end %>
+
+
+<br><%= link_to "Add shows", new_theatreshow_path %>

@@ -1,0 +1,16 @@
+<%= form_for(@movietheatre) do |movietheatre| %>
+<div class="field">
+    <br><%= movietheatre.label :movie_id %>
+    <%= movietheatre.select :movie_id, @movie_id %>
+  </div>
+
+  <div class="field">
+    <br><%= movietheatre.label :theatre_id %>
+    <%= movietheatre.select :theatre_id, @theatre_id %>
+  </div>
+
+   <div class="actions">
+    <br><%= movietheatre.submit "Submit" %>
+ </div>
+
+<% end %>

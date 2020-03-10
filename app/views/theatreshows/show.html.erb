@@ -1,0 +1,14 @@
+<h2> welcome to the shows </h2>
+<table>
+  <tbody>
+    <% @shows.each do |show| %>
+    <tr>
+      <td><%= show.name %><br/></td>
+      <td>Price: <%= show.price %></td>
+      <td><%= link_to "Book", moviestheatres_path(theatre_id: @theatre.id, movie_id: @movies.id, id: show.id) %>
+    </tr>
+   <% end %>
+  </tbody>
+</table>
+
+

@@ -1,0 +1,31 @@
+ <%= form_for(@theatreshow) do |t| %>
+ <div class="field">
+    <br><%= t.label :name %>
+    <%= t.text_field :name %>
+  </div>
+
+  <div class="field">
+    <br><%= t.label :time %>
+    <%= t.text_field :time %>
+  </div>
+
+  <div class="field">
+    <br><%= t.label :seat_count %>
+    <%= t.text_field :seat_count %>
+  </div>
+
+  <div class="field">
+    <br><%= t.label :price %>
+    <%= t.text_field :price %>
+  </div>
+
+  <div class="field">
+    <br><%= t.label :theatre_id %>
+    <%= t.text_field :theatre_id %>
+  </div>
+
+  <div class="actions">
+    <br><%= t.submit "Submit" %>
+ </div>
+
+<% end %>

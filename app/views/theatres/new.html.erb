@@ -1,0 +1,9 @@
+<%= form_for(@theatre) do |theatre| %>
+<div class="field">
+    <br><%= theatre.label :name %>
+    <%= theatre.text_field :name %>
+  </div>
+  <div class="actions">
+    <br><%= theatre.submit "Submit" %>
+ </div>
+<% end %>
