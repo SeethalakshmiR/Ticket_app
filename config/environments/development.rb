@@ -76,7 +76,7 @@ config.file_watcher = ActiveSupport::EventedFileUpdateChecker
    :port => 587,
    :domain => 'smtp.gmail.com',
    :user_name => "sabitha.k1999@gmail.com",
-   :password => "ArulSabi24#",
+   :password => "ArulSabi03#",
    :authentication => :login,
    :enable_starttls_auto => true
  }

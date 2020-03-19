@@ -1,5 +1,8 @@
 <p>You have successfully booked for the show </p>
-
+<p>
+  <strong>Ticket_id:</strong>
+  <%= @detail.id %>
+</p>
 <p>
   <strong>Name:</strong>
   <%= @detail.name %>
@@ -28,4 +31,4 @@
   <strong>Price:</strong>
   <%= @detail.price %>
 </p>
-
+  <%= link_to "cancel_ticket", new_cancellation_url %>

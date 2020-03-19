@@ -1,0 +1,9 @@
+<%= form_for(@cancellation) do |cancel| %>
+<div class="field">
+    <br><%= cancel.label :enter_ticketid %>
+    <%= cancel.text_field :ticket_id %>
+  </div>
+  <div class="actions">
+    <br><%= cancel.submit "Submit" %>
+ </div>
+<% end %>

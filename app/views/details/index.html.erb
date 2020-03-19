@@ -1,3 +1,4 @@
+<% if current_user.role == 'Admin' %>
 <table>
   <tbody>
     <% @details.each do |detail| %>
@@ -18,3 +19,4 @@
 </table>
   <strong>Total:</strong>
   <%= @total %>
+<% end %>

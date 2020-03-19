@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DetailsController < ApplicationController
-  before_action :set_detail, only: [:show]
+  before_action :set_detail, only: [:show, :destroy]
 
   def index
     @details = Detail.all
@@ -46,7 +46,6 @@ class DetailsController < ApplicationController
                   notice: 'Unable to book the ticket for this show '
     end
   end
-
   private
 
   def set_detail
